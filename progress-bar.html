@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Striped Progress Bars</h2>
+        <p>The .progress-bar-striped class adds stripes to the progress bars:</p> 
+        <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" id="progress1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+              40% Complete (success)
+        </div>
+        </div>
+        <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" id="progress2" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+              50% Complete (info)
+        </div>
+        </div>
+        <div class="progress">
+        <div class="progress-bar progress-bar-warning progress-bar-striped" id="progress3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+              60% Complete (warning)
+        </div>
+        </div>
+        <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped" id="progress4" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+              70% Complete (danger)
+        </div>
+        </div>
+        </div>  
+        
+        <button class="btn btn-success" id="btn1">start</button>
+        <button class="btn btn-danger" id="btn2">End</button>
+</body>
+
+<script>
+    $(document).ready(function(){
+
+    setInterval(function(){
+        var result= $("#progress1").width();
+        $("#progress1").width(result+20);
+    },500);
+
+    // setInterval(function(){
+    //     var result= $("#progress2").width();
+    //     $("#progress2").width(result-20);
+    // },500);
+
+    $("#btn1").click(function(){
+        $("#btn1").removeClass("btn btn-success");
+        $("#btn1").addClass("btn btn-primary");
+    });
+
+    $("#btn2").click(function(){
+        var result=$("#progress2").width();
+        $("#progress2").width(result+20);
+       
+    });
+
+    
+})
+</script>
+</html>
